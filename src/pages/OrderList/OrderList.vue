@@ -1,8 +1,7 @@
 <template>
   <el-table
     :data="tableData"
-    stripe
-    style="width: 100%">
+    stripe>
     <el-table-column
       prop="orderNo"
       label="订单编号"
@@ -58,8 +57,8 @@
   Vue.use(Table)
   Vue.use(TableColumn)
   export default {
-    name:'OrderList',
-    data() {
+    name: 'OrderList',
+    data () {
       return {
         tableData: [
           {
@@ -90,11 +89,12 @@
           },
         ]
       }
-    }
+    },
+    methods: {}
   }
 </script>
 
 <style lang="stylus" scoped>
-  .el-table
-    border: 1px solid red
+
+
 </style>

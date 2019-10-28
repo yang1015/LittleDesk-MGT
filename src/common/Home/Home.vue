@@ -1,6 +1,6 @@
 <template>
-  <el-container class="container">
-    <el-header class="header">Header</el-header>
+  <el-container class="layout">
+    <top-header></top-header>
     <el-container class="container">
       <side-menu></side-menu>
       <el-main class="main">
@@ -16,19 +16,18 @@
 
 <script>
   import Vue from 'vue'
-  import { Container, Header, Main, Aside, Menu } from 'element-ui'
-  import SideMenu from './SideMenu/SideMenu.vue'
+  import { Container, Main } from 'element-ui'
+  import SideMenu from '../SideMenu/SideMenu.vue'
+  import TopHeader from '../Header/Header.vue'
 
   Vue.use(Container)
-  Vue.use(Header)
   Vue.use(Main)
-  Vue.use(Aside)
-  Vue.use(Menu)
 
   export default {
     name: 'Home',
     components: {
-      SideMenu
+      SideMenu,
+      TopHeader
     }
   }
 
@@ -36,22 +35,16 @@
 
 <style lang="stylus" scoped>
   @import "~@styles/variables.styl"
-  .container
+  .layout
+    display: flex
+    flex-direction: column
+    justify-content flex-start
     height: 100vh
 
-  .el-header, .el-footer {
-    background-color: $bgGreen
-    color: #333
-    text-align: center
-    line-height: 60px
-  }
-
   .el-main
-    border: 1px solid blue
     background-color: #E9EEF3
     color: #333
     text-align: center
-    line-height: 160px
 
   body > .el-container
     margin-bottom: 40px

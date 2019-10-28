@@ -12,7 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: () => import('../components/Home/Home.vue'),
+      component: () => import('../common/Home/Home.vue'),
       meta: { title: '默认' },
       children: [
         {
@@ -24,7 +24,7 @@ export default new Router({
           path: '/auth',
           component: () => import('../pages/AuthMGT/AuthMGT.vue'),
           meta: { title: '用户管理' }
-        }
+        },
       ]
     }
   ]

@@ -10,14 +10,14 @@ import '@styles/reset.css'
 Vue.config.productionTip = false
 
 
-
-router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | vue-manage-system`;
-
-    // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已
-    next()
-
-});
+//
+// router.beforeEach((to, from, next) => {
+//   document.title = `${to.meta.title} | vue-manage-system`;
+//
+//     // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已
+//     next()
+//
+// });
 
 
 /* eslint-disable no-new */

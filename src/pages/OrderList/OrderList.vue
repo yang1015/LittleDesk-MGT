@@ -1,59 +1,63 @@
 <template>
-  <el-table
-    :data="tableData"
-    stripe>
-    <el-table-column
-      prop="orderNo"
-      label="订单编号"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="payAtStore"
-      label="消费分店"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="serviceType"
-      label="买卡类别">
-    </el-table-column>
-    <el-table-column
-      prop="amountPayable"
-      label="应收金额">
-    </el-table-column>
-    <el-table-column
-      prop="amountPaid"
-      label="实收金额">
-    </el-table-column>
-    <el-table-column
-      prop="discountAmount"
-      label="优惠金额">
-    </el-table-column>
-    <el-table-column
-      prop="paymentMethod"
-      label="支付方式">
-    </el-table-column>
-    <el-table-column
-      prop="orderStatus"
-      label="订单状态">
-    </el-table-column>
-    <el-table-column
-      prop="orderTime"
-      label="订单时间">
-    </el-table-column>
-    <el-table-column
-      prop="paymentTime"
-      label="支付时间">
-    </el-table-column>
-    <el-table-column
-      prop="refund"
-      label="退款">
-    </el-table-column>
-  </el-table>
+  <div>
+    <search-section></search-section>
+    <el-table
+      :data="tableData"
+      stripe>
+      <el-table-column
+        prop="orderNo"
+        label="订单编号"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="payAtStore"
+        label="消费分店"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="serviceType"
+        label="买卡类别">
+      </el-table-column>
+      <el-table-column
+        prop="amountPayable"
+        label="应收金额">
+      </el-table-column>
+      <el-table-column
+        prop="amountPaid"
+        label="实收金额">
+      </el-table-column>
+      <el-table-column
+        prop="discountAmount"
+        label="优惠金额">
+      </el-table-column>
+      <el-table-column
+        prop="paymentMethod"
+        label="支付方式">
+      </el-table-column>
+      <el-table-column
+        prop="orderStatus"
+        label="订单状态">
+      </el-table-column>
+      <el-table-column
+        prop="orderTime"
+        label="订单时间">
+      </el-table-column>
+      <el-table-column
+        prop="paymentTime"
+        label="支付时间">
+      </el-table-column>
+      <el-table-column
+        prop="refund"
+        label="退款">
+      </el-table-column>
+    </el-table>
+  </div>
+
 </template>
 <script>
   import Vue from 'vue'
   import { Table, TableColumn } from 'element-ui'
-
+  import SearchSection from './components/SearchSection.vue'
   Vue.use(Table)
   Vue.use(TableColumn)
   export default {
@@ -89,6 +93,9 @@
           },
         ]
       }
+    },
+    components: {
+      SearchSection
     },
     methods: {}
   }

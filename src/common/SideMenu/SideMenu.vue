@@ -2,11 +2,11 @@
   <div class="sidebar">
     <el-menu
       class="sidebar-el-menu"
-      :default-active="onRoutes"
       active-text-color="#20a0ff"
-      unique-opened
+      :unique-opened="true"
       router
-      >
+      :default-active="defaultActiveRoute"
+    >
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index" :key="item.index">
@@ -36,6 +36,7 @@
 
 <script>
   import Vue from 'vue'
+  import { menuList } from '&utils/util.js'
   import { Menu, Submenu, MenuItem } from 'element-ui'
 
   Vue.use(Menu)
@@ -46,52 +47,15 @@
     name: 'SideMenu',
     data () {
       return {
-        items: [
-          {
-            icon: 'el-icon-grape',
-            index: '/orderList',
-            title: '订单列表'
-          },
-          {
-            index: '1',
-            icon: 'el-icon-goblet-square-full',
-            title: '运营管理',
-            subs: [
-              {
-                index: '/cardMGT',
-                title: '卡管理'
-              }
-            ]
-          },
-          {
-            index: '2',
-            icon: 'el-icon-ice-cream',
-            title: '用户管理',
-            subs: [
-              {
-                index: '/userList',
-                title: '用户列表'
-              },
-              {
-                index: '/userFeedback',
-                title: '用户反馈'
-              }
-            ]
-          },
-          {
-            icon: 'el-icon-medal',
-            index: '/auth',
-            title: '权限管理'
-          }
-        ]
+        items: menuList
       }
     }
     ,
     components: {}
     ,
     computed: {
-      onRoutes () {
-        return this.$route.path.replace('/', '')
+      defaultActiveRoute () {
+        return this.$route.path
       }
     }
   }
@@ -100,7 +64,7 @@
 
 <style lang="stylus" scoped>
   .sidebar-el-menu
-    width: 180px
+    min-width: 200px
     text-align center
     margin-left: -30px
 

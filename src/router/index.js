@@ -23,8 +23,18 @@ export default new Router({
         {
           path: '/auth',
           component: () => import('../pages/AuthMGT/AuthMGT.vue'),
-          meta: { title: '用户管理' }
+          meta: { title: '权限管理' }
         },
+        {
+          path: '/userList',
+          component: () => import('../pages/userMGT/UserList.vue'),
+          meta: { title: '用户列表' }
+        },
+        {
+          path: '/userFeedback',
+          component: () => import('../pages/userMGT/UserFeedback.vue'),
+          meta: { title: '用户反馈' }
+        }
       ]
     }
   ]

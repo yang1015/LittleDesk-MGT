@@ -47,6 +47,4 @@
 
   body > .el-container
     margin-bottom: 40px
-
-
 </style>
